@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^create/$', 'articles.views.create'),
     url(r'^like/(?P<article_id>\d+)/$', 'articles.views.like_article'),
     url(r'^search/$', 'articles.views.search_titles'),
+    url(r'^addcomment/(?P<article_id>\d+)/$', 'articles.views.add_comment'),
 ]

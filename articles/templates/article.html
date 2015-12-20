@@ -17,4 +17,27 @@
 	<p> {{article.likes}} people liked this article </p>
 	<p><a href="/articles/like/{{article.id}}"> Like </a></p>
 
+	<h2> Comments </h2><hr>
+	{% if comments.count > 0 %}
+
+	{% for comment in comments %}
+	<div>
+	<p><b> {{ comment.user|upper }} </b></p>
+	<p><i> {{comment.text}} </i></p>
+	</div>
+
+	{% endfor %}
+
+	{% else %}
+	<p> No Comments </p><hr>
+	{% endif %}
+
+	<p>
+	<form action='/articles/addcomment/{{article.id}}/' method="POST"> {% csrf_token %}
+	<ul>
+	{{ form.as_p }}
+	</ul>
+	<input type="submit" name="submit" value="Add">
+	</form>
+	</p>
 {% endblock %}

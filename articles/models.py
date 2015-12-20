@@ -17,4 +17,9 @@ class Article(models.Model):
 
 class Comment(models.Model):
     article = models.ForeignKey(Article)
+    user = models.CharField(max_length=50, default='')
     text = models.TextField()
+
+    def __unicode__(self):
+        return self.text
+    
