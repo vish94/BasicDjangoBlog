@@ -1,3 +1,3 @@
 # BasicDjangoBlog
-A very basic blog developed on Django. 
+A very basic blog developed on Django.
  
